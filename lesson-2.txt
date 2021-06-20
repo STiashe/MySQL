@@ -1,0 +1,36 @@
+-1------------------------------------------------------------------------------------
+tahir@StudyMySQL:~$ mysql
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 12
+Server version: 8.0.25-0ubuntu0.20.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> 
+
+-2-----------------------------------------------------------------------------------
+mysql> CREATE DATABASE example;
+Query OK, 1 row affected (0,04 sec)
+
+mysql> USE example;
+Database changed
+mysql> CREATE TABLE users (id SERIAL PRIMARY KEY, name VARCHAR(255) COMMENT 'Имя пользователя');
+Query OK, 0 rows affected (0,10 sec)
+
+mysql> 
+-3-------------------------------------------------------------------------------------
+mysql> CREATE DATABASE sample;
+Query OK, 1 row affected (0,01 sec)
+
+mysql> exit
+Bye
+tahir@StudyMySQL:~$ mysqldump example > example.sql
+tahir@StudyMySQL:~$ mysql sample < example.sql
+tahir@StudyMySQL:~$ 
+
